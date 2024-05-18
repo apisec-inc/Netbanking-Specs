@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "APIsec",
+          "informationUri": "https://www.apisec.ai/product",
+          "rules": [
+            {
+              "id": "Unsecured",
+              "fullDescription": {
+                "text": "Broken Authentication"
+              },
+              "help": {
+                "text": "\n<b>\n    <font color=\"#ef5350\">Name: </font>\n</b>Broken Authentication <b>\n    <font color=\"#ef5350\"><sup>( 1 )</sup></font>\n</b><br> <br> <b>\n    <font color=\"#ef5350\">Overview: </font>\n</b> The \"Broken Authentication\" scanning identifies vulnerabilities resulting from either skipping or using cached\nresults for expired or invalid tokens/authorization header values.<br /><br />Authentication mechanisms are often\nimplemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to\nassume other user\"s identities temporarily or permanently. Compromising system\"s ability to identify the client/user,\ncompromises API security overall. <br> <br> <b>\n    <font color=\"#ef5350\">Severity: </font>\n</b> The difficulty of achieving API security has increased exponentially and unprotected APIs are one of the top web\napplication security risks organizations face. OWASP included “Unprotected APIs” in its proposal for 2017 top 10 list.\n<b>\n    <font color=\"#ef5350\"><sup>( 2 )</sup></font>\n</b><br> <br> <b>\n    <font color=\"#ef5350\">Vulnerability Impact: </font>\n</b> Every exposed API end-point will have some action to be performed thru appropriate HTTP method and not all methods\nare valid for every single end-point. Left unchecked and opened for access to all, the following are some of the\nconsequences <b>\n    <font color=\"#ef5350\"><sup>( 3 )</sup></font>\n</b>. <br> <br>\n<ul>\n    <li>Unnecessary Data Exposure and Data theft and corruption</li>\n    <li>Denial of Service Attacks - can render your RESTful API into non-functional state</li>\n    <li>Malicious Code Injection - including SQL Injections</li>\n    <li>Anti-Farming - RESTful APIs should be prevented from excessive farming.</li>\n</ul> <br> <b>\n    <font color=\"#ef5350\">Exploitation: </font>\n</b> Almost all kinds of authentication, injection, encryption, configuration, access control, and other issues can\npossible in the RESTful APIs as like the traditional application. Since APIs includes complex data structures and\nprotocols, the security testing may become cumbersome for an attacker. But it is quite possible to analyze APIs and\ndiscover vulnerabilities and exploit <b>\n    <font color=\"#ef5350\"><sup>( 4 )</sup></font>\n</b>. <br> <br> <b>\n    <font color=\"#ef5350\">Remediation: </font>\n</b> The following techniques may be utilized for having Secured Endpoints <b>\n    <font color=\"#ef5350\"><sup>( 3 ) ( 5 ) ( 6 )</sup></font>\n</b>.<br>\n<ul>\n    <li>Session Management and Authentication</li>\n    <li>API Keys</li>\n    <li>OpenID Connect, OAuth2, and SAML</li>\n    <li>Access Controls </li>\n    <li>Rate Limits </li>\n    <li>Input Validation and HTTP Return Codes</li>\n</ul> <b>\n    <font color=\"#ef5350\">References: </font>\n</b> <br>\n<ol>\n    <li>Representational State Transfer (REST) - https://en.wikipedia.org/wiki/Representational_state_transfer</li>\n    <li>OWASP 2017 Top 10 Proposal -Unprotected APIs -\n        https://www.owasp.org/index.php?title=Top_10_2017-A10-Underprotected_APIs&oldid=228947</li>\n    <li>RESTful API Security - https://dzone.com/articles/restful-api-security</li>\n    <li>REST API Security Guidelines - https://dzone.com/articles/top-5-rest-api-security-guidelines</li>\n    <li>OWASP REST Security Cheat Sheet - https://www.owasp.org/index.php/REST_Security_Cheat_Sheet</li>\n</ol> <br><br>\n* If this endpoint intentionally does not have any authentication requirements, you can disable scanning on it at a\nplaybook level where the category is applied to the endpoint."
+              },
+              "properties": {
+                "tags": [
+                  "Non-Intrusive",
+                  "OWASP-API2",
+                  "OWASP - OTG-AUTHN-002",
+                  "Broken Authentication",
+                  "[2020 CWE TOP 24] CWE - 306",
+                  "OWASP API Security Top 10"
+                ],
+                "security-severity": 9.1,
+                "problem.severity": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "Unsecured",
+          "message": {
+            "text": "Unsecured Vulnerability on GET:/api/v1/primary-transaction/{id}"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "none"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Unsecured",
+          "message": {
+            "text": "Unsecured Vulnerability on DELETE:/api/v1/primary-transaction/{id}"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "none"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Unsecured",
+          "message": {
+            "text": "Unsecured Vulnerability on GET:/api/v1/primary-transaction"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "none"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Unsecured",
+          "message": {
+            "text": "Unsecured Vulnerability on PUT:/api/v1/primary-transaction"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "none"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
